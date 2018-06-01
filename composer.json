@@ -1,0 +1,17 @@
+
+{
+    "name": "cooperspeele/cp-uni-form-plugin",
+    "type": "symfony1-plugin",
+    "description": "",
+    "keywords": ["symfony"],
+    "license": "MIT",
+    "homepage": "https://github.com/cooperspeele/cpUniFormPlugin",
+    "require": {
+        "composer/installers": "*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

@@ -1,0 +1,198 @@
+/* ------------------------------------------------------------------------------
+
+   Copyright (c) 2010, Dragan Babic
+   
+   Permission is hereby granted, free of charge, to any person
+   obtaining a copy of this software and associated documentation
+   files (the "Software"), to deal in the Software without
+   restriction, including without limitation the rights to use,
+   copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the
+   Software is furnished to do so, subject to the following
+   conditions:
+   
+   The above copyright notice and this permission notice shall be
+   included in all copies or substantial portions of the Software.
+   
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+   OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+   NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+   HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+   WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+   OTHER DEALINGS IN THE SOFTWARE.
+
+   ------------------------------------------------------------------------------ */
+/* #############################   GENERALS   ################################### */
+/* ------------------------------------------------------------------------------ */
+
+.uniForm4 { margin: 0; padding: 0; position: relative; z-index: 1; } /* reset stuff */
+  
+/* Some generals and more resets */
+.uniForm4 fieldset { 
+	border: none; 
+	margin: 0; 
+	padding: 0; 
+}
+
+.uniForm4 fieldset legend { 
+	margin: 0; 
+	padding: 0;
+}
+    
+/* This are the main units that contain form elements */
+.uniForm4 .ctrlHolder,
+.uniForm4 .buttonHolder{ margin: 0; padding: 0; clear: both; }
+    
+/* Clear all floats */ 
+.uniForm4:after,
+.uniForm4 .buttonHolder:after, 
+.uniForm4 .ctrlHolder:after, 
+.uniForm4 .ctrlHolder .multiField:after,
+.uniForm4 .inlineLabel:after{ 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	line-height: 0; 
+	font-size: 0; 
+	clear: both; 
+	min-height: 0; 
+	visibility: hidden; 
+}
+      
+.uniForm4 label,
+.uniForm4 button { cursor: pointer; }
+
+/* ------------------------------------------------------------------------------ */
+/* ##########################   DEFAULT LAYOUT   ################################ */
+/* ------------------------------------------------------------------------------ */
+/*       Styles for form controls where labels are above the input elements       */
+/* ------------------------------------------------------------------------------ */
+
+.uniForm4 label,
+.uniForm4 .label { 
+	display: block; 
+	float: none; 
+	margin: 0 0 .5em 0; 
+	padding: 0; 
+	line-height: 100%; 
+	width: auto; 
+}
+      
+/* Float the input elements */
+.uniForm4 .ctrlHolder .textInput,
+.uniForm4 .ctrlHolder .fileUpload,
+.uniForm4 .ctrlHolder .selectInput,
+.uniForm4 .ctrlHolder select,
+.uniForm4 .ctrlHolder textarea { 
+	float: left; 
+	width: 53%; 
+	margin: 0; 
+}
+      
+/* Postition the hints */
+.uniForm4 .formHint { float: right; width: 43%; margin: 0; clear: none; }
+      
+/* Position the elements inside combo boxes (multiple inputs/selects/checkboxes/radio buttons per unit) */
+.uniForm4 .ctrlHolder ul { float: left; width: 53%; margin: 0; padding: 0; }
+.uniForm4 .ctrlHolder ul li { margin: 0 0 .5em 0; list-style: none; }
+.uniForm4 .ctrlHolder ul li label { margin: 0; float: none; display: block; overflow: visible; }
+
+/* Alternate layout */
+.uniForm4 .ctrlHolder ul.alternate li { float: left; width: 30%; margin-right: 3%; }
+.uniForm4 .ctrlHolder ul.alternate li label { float: none; display: block; width: 98%; }
+.uniForm4 .ctrlHolder ul .textInput,
+.uniForm4 .ctrlHolder ul .selectInput,
+.uniForm4 .ctrlHolder ul select,
+.uniForm4 .ctrlHolder ul.alternate .textInput,
+.uniForm4 .ctrlHolder ul.alternate .selectInput,
+.uniForm4 .ctrlHolder ul.alternate select { width: 98%; margin-top: .5em; display: block; float: none; }
+            
+/* Required fields asterisk styling */
+.uniForm4 .ctrlHolder label em,
+.uniForm4 .ctrlHolder .label em { float: left; width: 1em; margin: 0 0 0 -1em; }
+
+/* ------------------------------------------------------------------------------ */
+/* #########################   ALTERNATE LAYOUT   ############################### */
+/* ------------------------------------------------------------------------------ */
+/*    Styles for form controls where labels are in line with the input elements   */
+/*    Set the class of the parent (preferably to a fieldset) to .inlineLabels     */
+/* ------------------------------------------------------------------------------ */
+
+.uniForm4 .inlineLabels .ctrlHolder label,
+.uniForm4 .inlineLabels .ctrlHolder .label { float: left; margin: .3em 2% 0 0; padding: 0; line-height: 1; position: relative; width: 32%; }
+      
+/* Float the input elements */
+.uniForm4 .inlineLabels .ctrlHolder .textInput,
+.uniForm4 .inlineLabels .ctrlHolder .fileUpload,
+.uniForm4 .inlineLabels .ctrlHolder .selectInput,
+.uniForm4 .inlineLabels .ctrlHolder select,
+.uniForm4 .inlineLabels .ctrlHolder textarea { float: left; width: 64%; }
+
+/* Postition the hints */
+.uniForm4 .ctrlHolder .inlineLabels .formHint { clear: both; float: none; width: auto; margin-left: 34%; position: static; }
+    
+/* Position the elements inside combo boxes (multiple inputs/selects/checkboxes/radio buttons per unit) */
+.uniForm4 .inlineLabels .ctrlHolder ul { float: left; width: 66%; }
+.uniForm4 .inlineLabels .ctrlHolder ul li { margin: .5em 0; }
+.uniForm4 .inlineLabels .ctrlHolder ul li label { float: none; display: block; width: 100%; }
+
+/* Alternate layout */
+.uniForm4 .inlineLabels .ctrlHolder ul.alternate li { margin-right: 3%; margin-top: .25em; }
+.uniForm4 .inlineLabels .ctrlHolder ul li label .textInput,
+.uniForm4 .inlineLabels .ctrlHolder ul li label textarea,
+.uniForm4 .inlineLabels .ctrlHolder ul li label select { float: none; display: block; width: 98%;  }
+    
+/* Required fields asterisk styling */
+.uniForm4 .inlineLabels .ctrlHolder label em,
+.uniForm4 .inlineLabels .ctrlHolder .label em { display: block; float: none; margin: 0; position: absolute; right: 0; }
+
+/* ----------------------------------------------------------------------------- */
+/* ########################### Additional Stuff ################################ */
+/* ----------------------------------------------------------------------------- */
+
+/* Generals */
+.uniForm4 legend { color: inherit; }
+    
+.uniForm4 .secondaryAction { float: left; }
+      
+/* .inlineLabel is used for inputs within labels - checkboxes and radio buttons */
+.uniForm4 .inlineLabel input,
+.uniForm4 .inlineLabels .inlineLabel input,
+.uniForm4 .blockLabels .inlineLabel input,
+/* class .inlineLabel is depreciated */
+.uniForm4 label input{ float: none; display: inline; margin: 0; padding: 0; border: none; }
+            
+.uniForm4 .buttonHolder .inlineLabel,
+.uniForm4 .buttonHolder label{ float: left; margin: .5em 0 0 0; width: auto; max-width: 60%; text-align: left; }
+      
+/* When you don't want to use a label */
+.uniForm4 .inlineLabels .noLabel ul{ margin-left: 34%; /* Match to width of label + gap to field */ }
+      
+/* Classes for control of the widths of the fields */
+.uniForm4 .small { width: 30% !important; }
+.uniForm4 .medium{ width: 45% !important; }
+.uniForm4 .large {  } /* Large is default and should match the value you set for .textInput, textarea or select */
+.uniForm4 .auto  { width: auto !important; }
+.uniForm4 .small,
+.uniForm4 .medium,
+.uniForm4 .auto{ margin-right: 4px; }
+
+/* Columns */
+.uniForm4 .col{ float: left; }
+.uniForm4 .col{ width: 50%; }
+
+
+/* added by OP */
+.uniForm4 .ctrlHolder ol.errors { clear: both; font-style: italic; font-size: 90%; }
+.uniForm4 fieldset.inlineLabels .ctrlHolder ol.errors { padding-left: 34%; }
+.uniForm4 .ctrlHolder ol.errors li { padding: 0.55em 0 0.25em 0; }
+
+.uniForm4 .ctrlHolder .input { float: left; width: 64%; }
+
+.uniForm4 .inlineLabels .ctrlHolder .input label { float: none; display: block; width: 100%; }
+.uniForm4 label input { margin-right: 0.25em; float: left; }
+.uniForm4 label .label { float: left; width: 90%!important; }
+.uniForm4 .ctrlHolder ul li { clear: both; }
+
